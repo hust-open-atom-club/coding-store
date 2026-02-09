@@ -94,7 +94,7 @@ const featuredApps = computed(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+  <div class="min-h-[calc(100vh-40px)] bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
     <!-- Header -->
     <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
       <div class="container mx-auto px-4 py-4">
@@ -231,9 +231,9 @@ const featuredApps = computed(() => {
               </div>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" class="w-full">
+              <Button class="w-full">
                 <Download class="w-4 h-4 mr-2" />
-                获取
+                安装
               </Button>
             </CardFooter>
           </Card>
