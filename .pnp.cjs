@@ -32,6 +32,8 @@ const RAW_RUNTIME_STATE =
           ["@tauri-apps/api", "npm:2.10.1"],\
           ["@tauri-apps/cli", "npm:2.10.0"],\
           ["@tauri-apps/plugin-opener", "npm:2.5.3"],\
+          ["@tauri-apps/plugin-os", "npm:2.3.2"],\
+          ["@tauri-apps/plugin-upload", "npm:2.4.0"],\
           ["@types/node", "npm:25.2.2"],\
           ["@vitejs/plugin-vue", "virtual:beec60578b4c49232c4d494c04a77c6fc423e0046d514a7075d79e7cd095673ad7d079ab259841a9b8bdc5161dba4ea9637cdbb049f9f31a3d8aaba542d2f047#npm:5.2.4"],\
           ["@vueuse/core", "virtual:beec60578b4c49232c4d494c04a77c6fc423e0046d514a7075d79e7cd095673ad7d079ab259841a9b8bdc5161dba4ea9637cdbb049f9f31a3d8aaba542d2f047#npm:14.2.0"],\
@@ -1115,6 +1117,26 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@tauri-apps/plugin-os", [\
+      ["npm:2.3.2", {\
+        "packageLocation": "./.yarn/cache/@tauri-apps-plugin-os-npm-2.3.2-8b1c08ae29-cd8529de1e.zip/node_modules/@tauri-apps/plugin-os/",\
+        "packageDependencies": [\
+          ["@tauri-apps/api", "npm:2.10.1"],\
+          ["@tauri-apps/plugin-os", "npm:2.3.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tauri-apps/plugin-upload", [\
+      ["npm:2.4.0", {\
+        "packageLocation": "./.yarn/cache/@tauri-apps-plugin-upload-npm-2.4.0-87fbdc0efb-bc38a61ac9.zip/node_modules/@tauri-apps/plugin-upload/",\
+        "packageDependencies": [\
+          ["@tauri-apps/api", "npm:2.10.1"],\
+          ["@tauri-apps/plugin-upload", "npm:2.4.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@tybys/wasm-util", [\
       ["npm:0.10.1", {\
         "packageLocation": "./.yarn/cache/@tybys-wasm-util-npm-0.10.1-607c8a7e5c-b255094f29.zip/node_modules/@tybys/wasm-util/",\
@@ -1549,6 +1571,8 @@ const RAW_RUNTIME_STATE =
           ["@tauri-apps/api", "npm:2.10.1"],\
           ["@tauri-apps/cli", "npm:2.10.0"],\
           ["@tauri-apps/plugin-opener", "npm:2.5.3"],\
+          ["@tauri-apps/plugin-os", "npm:2.3.2"],\
+          ["@tauri-apps/plugin-upload", "npm:2.4.0"],\
           ["@types/node", "npm:25.2.2"],\
           ["@vitejs/plugin-vue", "virtual:beec60578b4c49232c4d494c04a77c6fc423e0046d514a7075d79e7cd095673ad7d079ab259841a9b8bdc5161dba4ea9637cdbb049f9f31a3d8aaba542d2f047#npm:5.2.4"],\
           ["@vueuse/core", "virtual:beec60578b4c49232c4d494c04a77c6fc423e0046d514a7075d79e7cd095673ad7d079ab259841a9b8bdc5161dba4ea9637cdbb049f9f31a3d8aaba542d2f047#npm:14.2.0"],\

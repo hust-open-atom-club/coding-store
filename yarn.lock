@@ -910,6 +910,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tauri-apps/plugin-os@npm:~2":
+  version: 2.3.2
+  resolution: "@tauri-apps/plugin-os@npm:2.3.2"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.8.0"
+  checksum: 10c0/cd8529de1e920d5689f2ce1e27da1f7eede40211df897b5460bba28d6bb80eed39ecac3584492e4e03035790f40cd31fdd9171678d7846db0bce089e8c86aab5
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-upload@npm:~2":
+  version: 2.4.0
+  resolution: "@tauri-apps/plugin-upload@npm:2.4.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.8.0"
+  checksum: 10c0/bc38a61ac9fc920b20a57b778d8511dd53525ba2ccb77dc9436482d9d7c02a2a3b709b9259f3139c3ae8ba302fb3f85e93c53de679385427e43402dff5348262
+  languageName: node
+  linkType: hard
+
 "@tybys/wasm-util@npm:^0.10.1":
   version: 0.10.1
   resolution: "@tybys/wasm-util@npm:0.10.1"
@@ -1242,6 +1260,8 @@ __metadata:
     "@tauri-apps/api": "npm:^2"
     "@tauri-apps/cli": "npm:^2"
     "@tauri-apps/plugin-opener": "npm:^2"
+    "@tauri-apps/plugin-os": "npm:~2"
+    "@tauri-apps/plugin-upload": "npm:~2"
     "@types/node": "npm:^25.2.2"
     "@vitejs/plugin-vue": "npm:^5.2.1"
     "@vueuse/core": "npm:^14.2.0"
