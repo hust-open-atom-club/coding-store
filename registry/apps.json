@@ -1,0 +1,12 @@
+[
+    {
+    "id": 1,
+    "name": "Visual Studio Code",
+    "description": "The open source AI code editor",
+    "category": "Development",
+    "rating": 4.8,
+    "downloads": 125000,
+    "icon": "https://code.visualstudio.com/assets/branding/code-stable.png",
+    "featured": true
+  }
+]
