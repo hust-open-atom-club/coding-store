@@ -1,0 +1,9 @@
+[
+  { "id": "all", "name": "全部" },
+  { "id": "development", "name": "开发工具" },
+  { "id": "design", "name": "设计工具" },
+  { "id": "media", "name": "媒体播放" },
+  { "id": "productivity", "name": "生产力" },
+  { "id": "utilities", "name": "实用工具" },
+  { "id": "gaming", "name": "游戏" }
+]

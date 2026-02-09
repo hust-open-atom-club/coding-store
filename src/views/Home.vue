@@ -3,6 +3,8 @@ import { ref, computed, onMounted } from 'vue'
 import { Search, Download, Star, Filter } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { platform } from '@tauri-apps/plugin-os';
+
 import { 
   Card, 
   CardContent, 
