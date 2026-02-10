@@ -16,4 +16,6 @@ Coding Store 是一个私有化，可控性高，开放的应用商城。用于�
 ## 致谢
 
 感谢以下为本项目做出不可磨灭的贡献的人们：
+
+
 ![贡献](https://contrib.rocks/image?repo=hust-open-atom-club/coding-store)
