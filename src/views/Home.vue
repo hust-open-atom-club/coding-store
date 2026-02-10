@@ -154,10 +154,6 @@ const featuredApps = computed(() => {
                     <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     <span>{{ app.rating }}</span>
                   </div>
-                  <div class="flex items-center gap-1">
-                    <Download class="w-4 h-4" />
-                    <span>{{ (app.downloads / 1000).toFixed(0) }}K+</span>
-                  </div>
                 </div>
               </CardContent>
               <CardFooter>
@@ -230,10 +226,6 @@ const featuredApps = computed(() => {
                     <div class="flex items-center gap-1">
                       <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
                       <span>{{ app.rating }}</span>
-                    </div>
-                    <div class="flex items-center gap-1">
-                      <Download class="w-4 h-4" />
-                      <span>{{ (app.downloads / 1000).toFixed(0) }}K+</span>
                     </div>
                   </div>
                 </div>

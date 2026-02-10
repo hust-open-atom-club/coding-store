@@ -123,7 +123,7 @@ const closeImageModal = () => {
               </div>
 
               <div v-if="app.url" class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                官网: {{ app.url }}
+                官网: <a class="mt-2 text-sm text-blue-600 dark:text-blue-400" :href="app.url" target="_blank">{{ app.url }}</a>
               </div>
             </div>
           </div>
