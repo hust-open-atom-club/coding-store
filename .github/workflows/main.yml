@@ -36,7 +36,7 @@ jobs:
 
       - name: Set yarn 4
         run: |
-          corepack enable yarn@4
+          corepack enable
           yarn install
       - name: setup node
         uses: actions/setup-node@v4
