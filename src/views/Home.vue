@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { Search, Download, Star, Filter } from 'lucide-vue-next'
+import { Search, Download, Star } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { RouterLink } from 'vue-router'
-import { platform } from '@tauri-apps/plugin-os';
 
 import { 
   Card, 
@@ -16,14 +15,19 @@ import {
 } from '@/components/ui/card'
 
 interface AppItem {
-  id: number
-  name: string
-  description: string
-  category: string
-  rating: number
-  downloads: number
-  icon: string
-  featured?: boolean
+  id: number;
+  name: string;
+  description: string;
+  url?: string;
+  category: string;
+  rating: number;
+  downloads: number;
+  icon: string;
+  screenshots?: string[];
+  version?: Array<{ version: string }>;
+  size?: string;
+  developer?: string;
+  featured?: boolean;
 }
 
 const searchQuery = ref('')

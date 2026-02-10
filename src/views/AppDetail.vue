@@ -16,12 +16,13 @@ interface AppItem {
   id: number;
   name: string;
   description: string;
+  url?: string;
   category: string;
   rating: number;
   downloads: number;
   icon: string;
   screenshots?: string[];
-  version?: string;
+  version?: Array<{ version: string }>;
   size?: string;
   developer?: string;
   featured?: boolean;
