@@ -1,7 +1,18 @@
-# Tauri + Vue + TypeScript
+# Coding Store
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+[English](/README.md) | [简体中文](/docs/README_zh-cn.md)
 
-## Recommended IDE Setup
+## Interduction
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+Coding Store is a partive app store.It is a good helper to depoly your server.
+
+## Install
+
+Only 3 steps:
+    1. download installer
+    2. run and install
+    3. enjoy it
+
+## Thanks
+
+![贡献](https://contrib.rocks/image?repo=hust-open-atom-club/coding-store)
