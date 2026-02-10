@@ -1,12 +1,19 @@
 [
     {
     "id": 1,
+    "icon": "https://code.visualstudio.com/assets/branding/code-stable.png",
     "name": "Visual Studio Code",
     "description": "The open source AI code editor",
     "category": "Development",
     "rating": 4.8,
     "downloads": 125000,
-    "icon": "https://code.visualstudio.com/assets/branding/code-stable.png",
+    "version": [
+        {
+            "version": "Stable",
+            "release_date": "2026-2-10",
+            "url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64"
+        }
+    ],
     "featured": true
   }
 ]

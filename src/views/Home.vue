@@ -3,6 +3,7 @@ import { ref, computed, onMounted } from 'vue'
 import { Search, Download, Star, Filter } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { RouterLink } from 'vue-router'
 import { platform } from '@tauri-apps/plugin-os';
 
 import { 
@@ -124,46 +125,49 @@ const featuredApps = computed(() => {
       <section class="mb-12">
         <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">精选应用</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card 
+          <RouterLink 
             v-for="app in featuredApps" 
             :key="app.id"
-            class="overflow-hidden hover:shadow-lg transition-shadow"
+            :to="{ name: 'app-detail', params: { id: app.id } }"
+            class="block"
           >
-            <CardHeader class="pb-3">
-              <div class="flex items-start justify-between">
-                <div>
-                  <CardTitle class="flex items-center gap-2">
-                    <span class="text-xl"><img :src="app.icon" alt="app icon" class="w-6 h-6" /></span>
-                    {{ app.name }}
-                  </CardTitle>
-                  <CardDescription class="mt-1">
-                    {{ app.description }}
-                  </CardDescription>
+            <Card class="overflow-hidden hover:shadow-lg transition-shadow h-full">
+              <CardHeader class="pb-3">
+                <div class="flex items-start justify-between">
+                  <div>
+                    <CardTitle class="flex items-center gap-2">
+                      <span class="text-xl"><img :src="app.icon" alt="app icon" class="w-6 h-6" /></span>
+                      {{ app.name }}
+                    </CardTitle>
+                    <CardDescription class="mt-1">
+                      {{ app.description }}
+                    </CardDescription>
+                  </div>
+                  <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">
+                    精选
+                  </span>
                 </div>
-                <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">
-                  精选
-                </span>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div class="flex items-center justify-between text-sm text-gray-500">
-                <div class="flex items-center gap-1">
-                  <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  <span>{{ app.rating }}</span>
+              </CardHeader>
+              <CardContent>
+                <div class="flex items-center justify-between text-sm text-gray-500">
+                  <div class="flex items-center gap-1">
+                    <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <span>{{ app.rating }}</span>
+                  </div>
+                  <div class="flex items-center gap-1">
+                    <Download class="w-4 h-4" />
+                    <span>{{ (app.downloads / 1000).toFixed(0) }}K+</span>
+                  </div>
                 </div>
-                <div class="flex items-center gap-1">
-                  <Download class="w-4 h-4" />
-                  <span>{{ (app.downloads / 1000).toFixed(0) }}K+</span>
-                </div>
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button class="w-full">
-                <Download class="w-4 h-4 mr-2" />
-                安装
-              </Button>
-            </CardFooter>
-          </Card>
+              </CardContent>
+              <CardFooter>
+                <Button class="w-full">
+                  <Download class="w-4 h-4 mr-2" />
+                  安装
+                </Button>
+              </CardFooter>
+            </Card>
+          </RouterLink>
         </div>
       </section>
 
@@ -201,44 +205,47 @@ const featuredApps = computed(() => {
         </div>
         
         <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <Card 
+          <RouterLink 
             v-for="app in filteredApps" 
             :key="app.id"
-            class="overflow-hidden hover:shadow-md transition-shadow"
+            :to="{ name: 'app-detail', params: { id: app.id } }"
+            class="block"
           >
-            <CardHeader class="pb-3">
-              <CardTitle class="flex items-center gap-2">
-                <span class="text-xl"><img :src="app.icon" alt="app icon" class="w-6 h-6" /></span>
-                {{ app.name }}
-              </CardTitle>
-              <CardDescription class="line-clamp-2">
-                {{ app.description }}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div class="space-y-2">
-                <div class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">
-                  {{ app.category }}
-                </div>
-                <div class="flex items-center justify-between text-sm text-gray-500">
-                  <div class="flex items-center gap-1">
-                    <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    <span>{{ app.rating }}</span>
+            <Card class="overflow-hidden hover:shadow-md transition-shadow h-full">
+              <CardHeader class="pb-3">
+                <CardTitle class="flex items-center gap-2">
+                  <span class="text-xl"><img :src="app.icon" alt="app icon" class="w-6 h-6" /></span>
+                  {{ app.name }}
+                </CardTitle>
+                <CardDescription class="line-clamp-2">
+                  {{ app.description }}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div class="space-y-2">
+                  <div class="inline-block px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">
+                    {{ app.category }}
                   </div>
-                  <div class="flex items-center gap-1">
-                    <Download class="w-4 h-4" />
-                    <span>{{ (app.downloads / 1000).toFixed(0) }}K+</span>
+                  <div class="flex items-center justify-between text-sm text-gray-500">
+                    <div class="flex items-center gap-1">
+                      <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <span>{{ app.rating }}</span>
+                    </div>
+                    <div class="flex items-center gap-1">
+                      <Download class="w-4 h-4" />
+                      <span>{{ (app.downloads / 1000).toFixed(0) }}K+</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-            <CardFooter>
-              <Button class="w-full">
-                <Download class="w-4 h-4 mr-2" />
-                安装
-              </Button>
-            </CardFooter>
-          </Card>
+              </CardContent>
+              <CardFooter>
+                <Button class="w-full">
+                  <Download class="w-4 h-4 mr-2" />
+                  安装
+                </Button>
+              </CardFooter>
+            </Card>
+          </RouterLink>
         </div>
       </section>
     </main>
