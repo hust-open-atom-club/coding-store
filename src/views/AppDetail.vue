@@ -103,7 +103,7 @@ const goBack = () => {
                 </div>
                 
                 <div v-if="app.version" class="text-sm text-gray-600 dark:text-gray-400">
-                  版本: {{ app.version }}
+                  版本: {{ app.version[0].version }}
                 </div>
                 
                 <div v-if="app.size" class="text-sm text-gray-600 dark:text-gray-400">
