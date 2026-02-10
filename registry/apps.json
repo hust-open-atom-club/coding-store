@@ -4,10 +4,9 @@
     "icon": "https://code.visualstudio.com/assets/branding/code-stable.png",
     "name": "Visual Studio Code",
     "developer": "Microsoft",
-    "description": "The open source AI code editor",
+    "description": "VS Code is a free code editor, which runs on the macOS, Linux, and Windows operating systems. <br>Getting up and running with Visual Studio Code is quick and easy. It is a small download so you can install in a matter of minutes and give VS Code a try.",
     "category": "Development",
     "rating": 4.8,
-    "downloads": 125000,
     "version": [
         {
             "version": "Stable",
@@ -18,6 +17,7 @@
     "screenshots": [
         "https://code.visualstudio.com/assets/docs/getstarted/userinterface/hero.png"
     ],
-    "featured": true
+    "featured": true,
+    "url":"https://code.visualstudio.com/"
   }
 ]

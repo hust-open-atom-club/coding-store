@@ -14,8 +14,6 @@ import CustomTitleBar from '@/components/CustomTitleBar.vue'
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  overflow: auto;
 }
 </style>

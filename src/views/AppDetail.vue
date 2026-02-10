@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { Button } from '@/components/ui/button';
-import { Download, Star, ArrowLeft } from 'lucide-vue-next';
+import { Download, Star, ArrowLeft, X } from 'lucide-vue-next';
 import { 
   Card, 
   CardContent, 
@@ -32,6 +32,8 @@ const router = useRouter();
 const appId = ref(route.params.id);
 const app = ref<AppItem | null>(null);
 const loading = ref(true);
+const isModalOpen = ref(false);
+const currentImage = ref('');
 
 onMounted(async () => {
   try {
@@ -51,6 +53,16 @@ onMounted(async () => {
 
 const goBack = () => {
   router.go(-1); // 返回上一页
+};
+
+const openImageModal = (imageSrc: string) => {
+  currentImage.value = imageSrc;
+  isModalOpen.value = true;
+};
+
+const closeImageModal = () => {
+  isModalOpen.value = false;
+  currentImage.value = '';
 };
 </script>
 
@@ -93,11 +105,6 @@ const goBack = () => {
                   <span class="font-medium">{{ app.rating }}/5.0</span>
                 </div>
                 
-                <div class="flex items-center gap-2">
-                  <Download class="w-5 h-5" />
-                  <span>{{ (app.downloads / 1000).toFixed(0) }}K+ 下载</span>
-                </div>
-                
                 <div class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-sm font-medium rounded-full">
                   {{ app.category }}
                 </div>
@@ -114,6 +121,10 @@ const goBack = () => {
               <div v-if="app.developer" class="mt-2 text-sm text-gray-600 dark:text-gray-400">
                 开发者: {{ app.developer }}
               </div>
+
+              <div v-if="app.url" class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                官网: {{ app.url }}
+              </div>
             </div>
           </div>
         </CardHeader>
@@ -128,7 +139,29 @@ const goBack = () => {
                 :key="index" 
                 :src="screenshot" 
                 :alt="`Screenshot ${index + 1}`" 
-                class="rounded-lg shadow-md w-full object-cover max-h-64"
+                class="rounded-lg shadow-md w-full object-cover max-h-64 cursor-pointer hover:opacity-90 transition-opacity"
+                @click="openImageModal(screenshot)"
+              />
+            </div>
+          </div>
+          
+          <!-- Image Modal -->
+          <div 
+            v-if="isModalOpen" 
+            class="fixed inset-0 flex items-center justify-center z-50 p-4"
+            @click="closeImageModal"
+          >
+            <div class="relative max-w-4xl max-h-full" @click.stop>
+              <button 
+                class="absolute top-4 right-4 bg-gray-800 text-white rounded-full p-2 hover:bg-gray-700 z-10"
+                @click="closeImageModal"
+              >
+                <X class="w-5 h-5" />
+              </button>
+              <img 
+                :src="currentImage" 
+                :alt="`Enlarged screenshot`"
+                class="max-w-full max-h-[80vh] object-contain"
               />
             </div>
           </div>
