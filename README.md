@@ -17,5 +17,4 @@ Only 3 steps:
 
 Thanks to all contributors:
 
-
 ![贡献](https://contrib.rocks/image?repo=hust-open-atom-club/coding-store)
