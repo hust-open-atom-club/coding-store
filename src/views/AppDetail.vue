@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 import { Button } from '@/components/ui/button';
-import { Download, Star, ArrowLeft, X } from 'lucide-vue-next';
+import { Download, Star, X } from 'lucide-vue-next';
 import { 
   Card, 
   CardContent, 
@@ -42,7 +42,6 @@ interface AppItem {
 }
 
 const route = useRoute();
-const router = useRouter();
 const appId = ref(route.params.id);
 const app = ref<AppItem | null>(null);
 const loading = ref(true);
@@ -64,10 +63,6 @@ onMounted(async () => {
     loading.value = false;
   }
 });
-
-const goBack = () => {
-  router.go(-1); // 返回上一页
-};
 
 const openImageModal = (imageSrc: string) => {
   currentImage.value = imageSrc;

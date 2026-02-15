@@ -2,7 +2,9 @@
 import { ref } from 'vue'
 import { Search } from 'lucide-vue-next'
 import { Input } from '@/components/ui/input'
+
 const searchQuery = ref('')
+
 </script>
 
 <template>
