@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { Search, Download, Star } from 'lucide-vue-next'
+import { Download, Star } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { RouterLink } from 'vue-router'
 import { useToast } from 'vue-toastification'
+import searchQuery from "@/components/Header.vue"
 
 const toast = useToast()
 
@@ -44,7 +44,6 @@ interface AppItem {
   featured?: boolean;
 }
 
-const searchQuery = ref('')
 const selectedCategory = ref('all')
 const loading = ref(true)
 
@@ -116,28 +115,6 @@ const featuredApps = computed(() => {
 
 <template>
   <div class="min-h-[calc(100vh-40px)] bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-    <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
-            <h1 class="text-xl font-bold text-gray-900 dark:text-white">Coding Store</h1>
-          </div>
-          
-          <div class="flex items-center space-x-4">
-            <div class="relative">
-              <Search class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-              <Input 
-                v-model="searchQuery"
-                placeholder="搜索应用..."
-                class="pl-10 w-64"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <main class="container mx-auto px-4 py-8">
       <!-- Featured Apps Section -->
       <section class="mb-12">

@@ -11,6 +11,19 @@ import {
   CardHeader, 
   CardTitle 
 } from '@/components/ui/card';
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
+
+const installApp = () => {
+  if (!app.value) return;
+  if (app.value.url) {
+    window.open(app.value.url, '_blank');
+    toast?.success(`开始下载 ${app.value.name}`)
+  } else {
+    alert(`暂不支持直接安装 ${app.value.name}`);
+  }
+};
 
 interface AppItem {
   id: number;
@@ -69,19 +82,6 @@ const closeImageModal = () => {
 
 <template>
   <div class="min-h-[calc(100vh-40px)] bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
-    <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center space-x-2">
-            <button @click="goBack" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-              <ArrowLeft class="w-5 h-5 text-gray-600 dark:text-gray-300" />
-            </button>
-            <h1 class="text-xl font-bold text-gray-900 dark:text-white">Coding Store</h1>
-          </div>
-        </div>
-      </div>
-    </header>
-
     <main class="container mx-auto px-4 py-8">
       <div v-if="loading" class="flex justify-center items-center py-12">
         <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
@@ -147,9 +147,9 @@ const closeImageModal = () => {
           </div>
           
           <!-- Image Modal -->
-          <div 
+           <div 
             v-if="isModalOpen" 
-            class="fixed inset-0 flex items-center justify-center z-50 p-4"
+            class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
             @click="closeImageModal"
           >
             <div class="relative max-w-4xl max-h-full" @click.stop>
@@ -175,7 +175,7 @@ const closeImageModal = () => {
         </CardContent>
         
         <CardFooter class="flex flex-col sm:flex-row gap-3">
-          <Button class="w-full sm:w-auto">
+          <Button class="w-full sm:w-auto" @click.stop="installApp">
             <Download class="w-4 h-4 mr-2" />
             安装应用
           </Button>
