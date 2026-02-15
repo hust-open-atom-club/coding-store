@@ -4,6 +4,20 @@ import { Search, Download, Star } from 'lucide-vue-next'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { RouterLink } from 'vue-router'
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
+
+// 安装
+const installApp = (appId: number) => {
+  const app = apps.value.find(a => a.id === appId)
+  if (!app) return
+
+  if (app.url) {
+    window.open(app.url, '_blank')
+    toast?.success(`开始下载 ${app.name}`)
+  }
+}
 
 import { 
   Card, 
@@ -161,7 +175,7 @@ const featuredApps = computed(() => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button class="w-full">
+                <Button class="w-full" @click.stop="installApp(app.id)">
                   <Download class="w-4 h-4 mr-2" />
                   安装
                 </Button>
@@ -235,7 +249,7 @@ const featuredApps = computed(() => {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button class="w-full">
+                <Button class="w-full" @click.stop="installApp(app.id)">
                   <Download class="w-4 h-4 mr-2" />
                   安装
                 </Button>

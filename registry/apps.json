@@ -11,7 +11,10 @@
         {
             "version": "Stable",
             "release_date": "2026-2-10",
-            "url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64"
+            "windows-x64": {
+                "type": "run",
+                "url": "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64"
+            }
         }
     ],
     "screenshots": [
