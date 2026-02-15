@@ -36,6 +36,12 @@ jobs:
         with:
           node-version: '24'
 
+      - name: prepare corepack
+        run: |
+          npm install corepack -g --force
+          corepack enable
+          yarn set version 4
+
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable # Set this to dtolnay/rust-toolchain@nightly
         with:
